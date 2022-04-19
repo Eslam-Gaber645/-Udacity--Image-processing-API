@@ -1,6 +1,6 @@
 'use strict';
 
-export default function fileNameSplitter(filename: string): FileNameSplitter {
+export default function fileNameSplitter(filename: string): SplittingFileName {
   let ext: string;
   const basename: string = filename.replace(
     /.\w+$/,

@@ -23,7 +23,7 @@ const request: supertest.SuperTest<supertest.Test> = supertest(app),
         return resolvePath(this.originalImgsDir, this.imgName);
       },
       calcThumbImgPath({ width, height }: { width?: true; height?: true }) {
-        const splittingImgName: FileNameSplitter = fileNameSplitter(
+        const splittingImgName: SplittingFileName = fileNameSplitter(
           this.imgName
         );
 

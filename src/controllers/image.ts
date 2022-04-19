@@ -1,3 +1,4 @@
+/// <reference path="../../@types/helpers.d.ts" />
 'use strict';
 
 import { resolve as resolvePath } from 'path';
@@ -70,7 +71,7 @@ export default {
     ): Promise<void | Response> {
       const { filename, width, height } = res.locals,
         // split image name.
-        splittingImgName: FileNameSplitter = fileNameSplitter(filename),
+        splittingImgName: SplittingFileName = fileNameSplitter(filename),
         // get thumb image name.
         thumbImgName: string = getThumbImageName({
           imgName: splittingImgName.basename,

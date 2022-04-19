@@ -1,4 +1,4 @@
-interface FileNameSplitter {
+interface SplittingFileName {
   basename: string;
   ext: string;
 }

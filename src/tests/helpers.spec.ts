@@ -5,7 +5,7 @@ import { fileNameSplitter, getThumbImageName } from '../helpers';
 describe(`App 'helper functions' tests`, (): void => {
   describe('Function: fileNameSplitter', (): void => {
     it(`Takes a filename to return an object with the base name and extension`, (): void => {
-      const result: FileNameSplitter = fileNameSplitter('testName.jpg');
+      const result: SplittingFileName = fileNameSplitter('testName.jpg');
 
       expect(result).toEqual({
         basename: 'testName',

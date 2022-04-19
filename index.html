@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Description</title>
+</head>
+
+<body>
+  <h1 id="-udacity-image-processing-api">(Udacity) Image Processing API</h1>
+  <p>This project is for the Advanced Full-Stack Web Development track provided by <a href="https://www.udacity.com/">Udacity</a>.</p>
+  <p>It is a service to resize images with the desired dimensions and save them as a cache to be reused upon request again.</p>
+  <h2 id="tech-stack">Tech Stack</h2>
+  <ul>
+    <li>Server<ul>
+        <li>Node</li>
+        <li>Express</li>
+        <li>Sharp</li>
+      </ul>
+    </li>
+    <li>Development<ul>
+        <li>Typescript</li>
+        <li>Eslint</li>
+        <li>Prettier</li>
+        <li>Jasmine</li>
+        <li>Supertest</li>
+      </ul>
+    </li>
+  </ul>
+  <h2 id="installation">Installation</h2>
+  <p>Clone the project</p>
+  <pre><code class="lang-bash">  git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/Eslam-Gaber645/-Udacity--Image-processing-API.git
+  </code></pre>
+  <p>Go to the project directory</p>
+  <pre><code class="lang-bash">  cd ./-Udacity<span class="hljs-comment">--Image-processing-API</span>
+  </code></pre>
+  <p>Install dependencies</p>
+  <pre><code class="lang-bash">  <span class="hljs-built_in">npm</span> i
+  </code></pre>
+  <p>Build project</p>
+  <pre><code class="lang-bash">  npm <span class="hljs-keyword">run</span><span class="bash"> build</span>
+  </code></pre>
+  <h2 id="running-server">Running Server</h2>
+  <p>To run the server, run the following command</p>
+  <pre><code class="lang-bash">  npm <span class="hljs-keyword">run</span><span class="bash"> start</span>
+  </code></pre>
+  <p><em>Now the server is running on port 3000!.</em></p>
+  <h2 id="running-tests">Running Tests</h2>
+  <p>To run tests, run the following command</p>
+  <pre><code class="lang-bash">  npm <span class="hljs-keyword">run</span><span class="bash"> <span class="hljs-built_in">test</span></span>
+  </code></pre>
+  <h2 id="all-npm-tasks">All NPM Tasks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:left">Task</th>
+        <th style="text-align:left">Action</th>
+        <th style="text-align:left">Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:left"><code>clean</code></td>
+        <td style="text-align:left">Remove build directory</td>
+        <td style="text-align:left">.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left"><code>move:index.html</code></td>
+        <td style="text-align:left">Move index.html to build directory</td>
+        <td style="text-align:left">it&#39;s used by <code>build</code></td>
+      </tr>
+      <tr>
+        <td style="text-align:left"><code>build</code></td>
+        <td style="text-align:left">Build the app</td>
+        <td style="text-align:left">uses the <code>clean &amp; move:index.html</code> tasks.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left"><code>start</code></td>
+        <td style="text-align:left">Start the server</td>
+        <td style="text-align:left">You have to <code>build</code> the app first.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left"><code>start:dev</code></td>
+        <td style="text-align:left">Start the dev server</td>
+        <td style="text-align:left">.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left"><code>jasmine</code></td>
+        <td style="text-align:left">Run jasmine tests</td>
+        <td style="text-align:left">You have to <code>build</code> the app first.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left"><code>test</code></td>
+        <td style="text-align:left">Build app and run tests</td>
+        <td style="text-align:left">uses the <code>build</code> task.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left"><code>prettier</code></td>
+        <td style="text-align:left">Prettify source code</td>
+        <td style="text-align:left">.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left"><code>lint</code></td>
+        <td style="text-align:left">Linting source code</td>
+        <td style="text-align:left">.</td>
+      </tr>
+      <tr>
+        <td style="text-align:left"><code>lint:fix</code></td>
+        <td style="text-align:left">Linting and fix source code</td>
+        <td style="text-align:left">.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="api-reference">API Reference</h2>
+  <h4 id="description-page-">Description page:-</h4>
+  <pre><code class="lang-http">  <span class="hljs-meta">GET</span> /
+  </code></pre>
+  <h4 id="get-image-">Get image:-</h4>
+  <pre><code class="lang-http">  GET /<span class="hljs-built_in">image</span>?filename=${imageName}&amp;<span class="hljs-built_in">width</span>=${<span class="hljs-built_in">width</span>}&amp;<span class="hljs-built_in">height</span>=${<span class="hljs-built_in">height</span>}
+  </code></pre>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:left">Parameter</th>
+        <th style="text-align:left">Type</th>
+        <th style="text-align:left">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:left"><code>imageName</code></td>
+        <td style="text-align:left"><code>string</code></td>
+        <td style="text-align:left"><strong>Required</strong>. Target image name</td>
+      </tr>
+      <tr>
+        <td style="text-align:left"><code>width</code></td>
+        <td style="text-align:left"><code>integer</code></td>
+        <td style="text-align:left"><strong>Optional</strong>. Pixel numeric value</td>
+      </tr>
+      <tr>
+        <td style="text-align:left"><code>height</code></td>
+        <td style="text-align:left"><code>integer</code></td>
+        <td style="text-align:left"><strong>Optional</strong>. Pixel numeric value</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="environment-variables">Environment Variables</h2>
+  <p>You can change the following environment variables in .env file.</p>
+  <ul>
+    <li>
+      <p><code>PORT</code> : The server port.</p>
+    </li>
+    <li>
+      <p><code>ORIGINAL_IMAGES_DIR</code> : The original images directory.</p>
+    </li>
+    <li>
+      <p><code>THUMB_IMAGES_DIR</code> : The resized images directory.</p>
+    </li>
+  </ul>
+  <h2 id="notes">Notes</h2>
+  <p>-If width and height are not defined or are not valid values, then the original image will be sent without resizing.</p>
+  <p>-If only width or height is defined with a valid value, the other dimension of the image will be scaled based on the aspect ratio of the original image.</p>
+  <p>-You can resize any image with any extension.</p>
+</body>
+
+</html>

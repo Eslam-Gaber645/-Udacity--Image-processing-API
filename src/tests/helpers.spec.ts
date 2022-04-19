@@ -1,6 +1,17 @@
 'use strict';
 
-import { fileNameSplitter, getThumbImageName } from '../helpers';
+import { access, unlink } from 'fs/promises';
+import { resolve as resolvePath } from 'path';
+import { fileNameSplitter, getThumbImageName, resizeImage } from '../helpers';
+
+const originalImgsDir: string = process.env.ORIGINAL_IMAGES_DIR as string,
+  thumbImgsDir: string = process.env.THUMB_IMAGES_DIR as string,
+  originalTestImage: string = 'fjord.jpg',
+  originalTestImagePath = resolvePath(originalImgsDir, originalTestImage),
+  outputTestImagePath = resolvePath(
+    thumbImgsDir,
+    `resized_${originalTestImage}`
+  );
 
 describe(`App 'helper functions' tests`, (): void => {
   describe('Function: fileNameSplitter', (): void => {
@@ -24,6 +35,21 @@ describe(`App 'helper functions' tests`, (): void => {
       });
 
       expect(result).toBe('testName_width-200_height-100.jpg');
+    });
+  });
+
+  describe('Function: resizeImage', (): void => {
+    it(`Takes options as arguments to resize specific image`, async (): Promise<void> => {
+      await expectAsync(
+        resizeImage({
+          inputPath: originalTestImagePath,
+          outputPath: outputTestImagePath,
+          width: 200,
+          height: 100,
+        })
+      ).toBeResolved();
+      await expectAsync(access(outputTestImagePath)).toBeResolved();
+      await expectAsync(unlink(outputTestImagePath)).toBeResolved();
     });
   });
 });

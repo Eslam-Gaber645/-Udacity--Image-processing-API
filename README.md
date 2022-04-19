@@ -63,18 +63,17 @@ To run tests, run the following command
 
 ## All NPM Tasks
 
-| Task              | Action                             | Note                                      |
-| :---------------- | :--------------------------------- | :---------------------------------------- |
-| `clean`           | Remove build directory             | .                                         |
-| `move:index.html` | Move index.html to build directory | it's used by `build`                      |
-| `build`           | Build the app                      | uses the `clean & move:index.html` tasks. |
-| `start`           | Start the server                   | You have to `build` the app first.        |
-| `start:dev`       | Start the dev server               | .                                         |
-| `jasmine`         | Run jasmine tests                  | You have to `build` the app first.        |
-| `test`            | Build app and run tests            | uses the `build` task.                    |
-| `prettier`        | Prettify source code               | .                                         |
-| `lint`            | Linting source code                | .                                         |
-| `lint:fix`        | Linting and fix source code        | .                                         |
+| Task        | Action                      | Note                               |
+| :---------- | :-------------------------- | :--------------------------------- |
+| `clean`     | Remove build directory      | .                                  |
+| `build`     | Build the app               | uses the `clean` tasks.            |
+| `start`     | Start the server            | You have to `build` the app first. |
+| `start:dev` | Start the dev server        | .                                  |
+| `jasmine`   | Run jasmine tests           | You have to `build` the app first. |
+| `test`      | Build app and run tests     | uses the `build` task.             |
+| `prettier`  | Prettify source code        | .                                  |
+| `lint`      | Linting source code         | .                                  |
+| `lint:fix`  | Linting and fix source code | .                                  |
 
 ## API Reference
 
